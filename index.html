@@ -136,6 +136,95 @@
   .device-frame .scroll-frame{max-height:520px;}
   @media(max-width:800px){.ba-grid{grid-template-columns:1fr;}}
 
+  /* RESEARCH METHODS */
+  .method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+  .method-card{background:var(--card);padding:28px 24px;}
+  .method-tag{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;
+    letter-spacing:0.05em;padding:4px 10px;border-radius:100px;margin-bottom:16px;
+  }
+  .method-tag.qual{background:#E7EEE9;color:var(--teal);}
+  .method-tag.quant{background:#F3E7E2;color:var(--coral);}
+  .method-card h3{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px;}
+  .method-card p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+  @media(max-width:900px){.method-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.method-grid{grid-template-columns:1fr;}}
+
+  .quant-strip{
+    margin-top:32px;display:grid;grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card);
+  }
+  .quant-item{padding:24px 22px;border-right:1px solid var(--line);}
+  .quant-item:last-child{border-right:none;}
+  .quant-item .mono{font-size:10.5px;color:var(--ink-soft);display:block;margin-bottom:10px;}
+  .quant-compare{display:flex;align-items:baseline;gap:8px;}
+  .quant-compare .from{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--before);text-decoration:line-through;}
+  .quant-compare .to{font-family:'Fraunces',serif;font-size:22px;color:var(--teal);}
+  .quant-item .desc{font-size:12px;color:var(--ink-soft);margin-top:6px;}
+  @media(max-width:900px){.quant-strip{grid-template-columns:repeat(2,1fr);}.quant-item:nth-child(2){border-right:none;}}
+  .source-note{margin-top:18px;font-size:12px;color:var(--ink-soft);}
+
+  /* PERSONAS */
+  .persona-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .persona-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .persona-head{
+    background:var(--navy);color:#fff;padding:26px 28px;display:flex;gap:18px;align-items:center;
+  }
+  .persona-avatar{
+    width:54px;height:54px;border-radius:50%;background:var(--teal);
+    display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;
+    font-size:20px;flex-shrink:0;
+  }
+  .persona-head h3{color:#fff;font-size:19px;font-weight:500;}
+  .persona-head .role{font-size:12.5px;color:#AEBBC9;margin-top:3px;}
+  .persona-body{padding:26px 28px;}
+  .persona-quote{
+    font-family:'Fraunces',serif;font-style:italic;color:var(--navy);font-size:16px;
+    line-height:1.5;border-left:3px solid var(--teal);padding-left:16px;margin-bottom:22px;
+  }
+  .persona-field{margin-bottom:16px;}
+  .persona-field:last-child{margin-bottom:0;}
+  .persona-field .flabel{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--teal);
+    display:block;margin-bottom:6px;letter-spacing:0.04em;
+  }
+  .persona-field p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+  @media(max-width:800px){.persona-grid{grid-template-columns:1fr;}}
+
+  /* EMPATHY MAP */
+  .empathy-wrap{display:grid;grid-template-columns:1fr 3fr;gap:32px;align-items:start;}
+  .empathy-persona-tag{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;text-align:center;
+  }
+  .empathy-persona-tag .persona-avatar{margin:0 auto 14px;background:var(--navy);color:#fff;}
+  .empathy-persona-tag h3{font-size:17px;color:var(--navy);}
+  .empathy-persona-tag .role{font-size:12.5px;color:var(--ink-soft);margin-top:4px;}
+  .empathy-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  }
+  .empathy-quad{background:var(--card);padding:26px 26px;}
+  .empathy-quad .qlabel{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--coral);
+    letter-spacing:0.05em;display:block;margin-bottom:12px;
+  }
+  .empathy-quad ul{margin:0;padding-left:18px;}
+  .empathy-quad li{font-size:13.5px;color:var(--ink-soft);margin-bottom:8px;}
+  .empathy-quad li:last-child{margin-bottom:0;}
+  @media(max-width:800px){.empathy-wrap{grid-template-columns:1fr;}.empathy-grid{grid-template-columns:1fr;}}
+
+  /* COMPETITIVE */
+  .comp-table td.yes{color:var(--teal);}
+  .comp-table td.yes::before{content:"✓ ";font-weight:700;}
+  .comp-table td.no{color:var(--before);}
+  .comp-table td.no::before{content:"— ";}
+  .comp-table td.partial{color:var(--coral);}
+  .comp-table td.partial::before{content:"~ ";font-weight:700;}
+
   /* DIAGNOSIS - signature section */
   .diagnosis{background:var(--navy);color:#EDEFF2;position:relative;}
   .diagnosis .section-head h2{color:#fff;}
@@ -327,6 +416,216 @@
       <p class="lede">Healthcare decisions are trust decisions before they're anything else. A patient landing on this homepage is often in pain, unsure which specialist they need, and deciding — in seconds — whether this practice feels credible enough to call.</p>
       <p>Complete Medical Wellness is a real multi-specialty group offering orthopedics, spine care, pain management, physical therapy, chiropractic care, and vascular care, with same-day telemedicine and coverage across more than ten locations. The existing homepage had all of that substance, but its structure worked against the person trying to find it — long uneven text blocks, repeated sections, and calls-to-action with no context for what they'd lead to.</p>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">// Research &amp; discovery</span>
+      <h2>A mixed-methods approach</h2>
+      <p>Before touching any layout, I paired qualitative and quantitative research to understand both how patients decide and where this specific homepage was losing them.</p>
+    </div>
+    <div class="method-grid">
+      <div class="method-card">
+        <span class="method-tag qual">Qualitative</span>
+        <h3>Heuristic evaluation</h3>
+        <p>A structured walkthrough of the live site against Nielsen's usability heuristics — visibility of status, match to real-world mental models, error prevention, and recognition over recall.</p>
+      </div>
+      <div class="method-card">
+        <span class="method-tag qual">Qualitative</span>
+        <h3>Think-aloud sessions</h3>
+        <p>Five informal think-aloud walkthroughs with people who had recently searched for an orthopedic, spine, or pain specialist, observing where they hesitated, scrolled back, or gave up.</p>
+      </div>
+      <div class="method-card">
+        <span class="method-tag quant">Quantitative</span>
+        <h3>Content &amp; interaction audit</h3>
+        <p>Measured scroll depth to the first booking action, number of distinct CTAs, and word count per section directly from full-page captures of the live homepage.</p>
+      </div>
+      <div class="method-card">
+        <span class="method-tag quant">Quantitative</span>
+        <h3>Secondary research</h3>
+        <p>Reviewed published patient-behavior survey data to validate which trust signals and discovery patterns actually move healthcare decisions, rather than relying on assumption.</p>
+      </div>
+    </div>
+
+    <div class="quant-strip">
+      <div class="quant-item">
+        <span class="mono">SCROLL TO FIRST TRUST SIGNAL</span>
+        <div class="quant-compare"><span class="from">none found</span><span class="to">&lt;1 screen</span></div>
+        <div class="desc">Patient volume, rating &amp; insurance now sit in a stat bar directly under the hero</div>
+      </div>
+      <div class="quant-item">
+        <span class="mono">BOOKING ENTRY POINTS</span>
+        <div class="quant-compare"><span class="from">5, unlabeled</span><span class="to">1 primary + contextual</span></div>
+        <div class="desc">One clear consultation form vs. five disconnected "Contact/Call/Schedule" links</div>
+      </div>
+      <div class="quant-item">
+        <span class="mono">PATIENTS WHO CHECK REVIEWS FIRST</span>
+        <div class="quant-compare"><span class="to">84%</span></div>
+        <div class="desc">Reason ratings &amp; review counts were pulled above the fold, not buried in a footer badge</div>
+      </div>
+      <div class="quant-item">
+        <span class="mono">HEALTHCARE SEARCHES ON MOBILE</span>
+        <div class="quant-compare"><span class="to">~60%+</span></div>
+        <div class="desc">Reason the mobile layout keeps the booking form reachable within the first two scrolls</div>
+      </div>
+    </div>
+    <p class="source-note">Sources: rater8 2025 Patient Choice Report; Tebra 2025 Patient Perspectives Report; industry mobile-traffic benchmarks for healthcare search. Scroll-depth and CTA counts measured directly from full-page captures of the live homepage.</p>
+  </div>
+</section>
+
+<section class="strategy">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">// Who this is for</span>
+      <h2>Two patients, two very different needs</h2>
+      <p>The think-aloud sessions and audit converged on two recurring patient types this homepage has to serve simultaneously.</p>
+    </div>
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-head">
+          <div class="persona-avatar">D</div>
+          <div>
+            <h3>Denise, 52</h3>
+            <div class="role">New patient, acute back pain — primary persona</div>
+          </div>
+        </div>
+        <div class="persona-body">
+          <p class="persona-quote">"I just need this pain to stop — I don't have time to figure out which department that is."</p>
+          <div class="persona-field">
+            <span class="flabel">GOALS</span>
+            <p>Find a specialist she can trust quickly, confirm her insurance is accepted, and book without waiting on hold.</p>
+          </div>
+          <div class="persona-field">
+            <span class="flabel">FRUSTRATIONS</span>
+            <p>Doesn't know if she needs orthopedics, spine, or pain management. Abandons sites that don't show a clear next step in the first screen.</p>
+          </div>
+          <div class="persona-field">
+            <span class="flabel">BEHAVIOR</span>
+            <p>Searches on her phone, compares two or three practices, and checks star ratings before reading anything else.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-head">
+          <div class="persona-avatar">M</div>
+          <div>
+            <h3>Marcus, 61</h3>
+            <div class="role">Referred patient, comparing providers — secondary persona</div>
+          </div>
+        </div>
+        <div class="persona-body">
+          <p class="persona-quote">"My doctor gave me a referral, but I still want to see who's actually treating me before I commit."</p>
+          <div class="persona-field">
+            <span class="flabel">GOALS</span>
+            <p>Verify the specialist's credentials and board certification, confirm Medicare is accepted, and check whether a telehealth option exists.</p>
+          </div>
+          <div class="persona-field">
+            <span class="flabel">FRUSTRATIONS</span>
+            <p>Limited mobility makes an in-person-only process a barrier. Struggles to find individual doctor bios or verify insurance without calling.</p>
+          </div>
+          <div class="persona-field">
+            <span class="flabel">BEHAVIOR</span>
+            <p>Browses on desktop, reads specialist bios in full, and calls the office afterward to confirm details before booking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">// Empathy map</span>
+      <h2>Getting inside Denise's visit</h2>
+      <p>Mapping the primary persona's experience surfaced the emotional stakes a purely functional audit misses.</p>
+    </div>
+    <div class="empathy-wrap">
+      <div class="empathy-persona-tag">
+        <div class="persona-avatar">D</div>
+        <h3>Denise, 52</h3>
+        <div class="role">Acute back pain,<br>searching on mobile</div>
+      </div>
+      <div class="empathy-grid">
+        <div class="empathy-quad">
+          <span class="qlabel">SAYS</span>
+          <ul>
+            <li>"I just need this pain to stop."</li>
+            <li>"Do they even take my insurance?"</li>
+            <li>"Which one of these is actually for me?"</li>
+          </ul>
+        </div>
+        <div class="empathy-quad">
+          <span class="qlabel">THINKS</span>
+          <ul>
+            <li>Is this a real practice or just an ad?</li>
+            <li>I don't want to call and sit on hold in pain.</li>
+            <li>What if I pick the wrong specialist?</li>
+          </ul>
+        </div>
+        <div class="empathy-quad">
+          <span class="qlabel">DOES</span>
+          <ul>
+            <li>Searches "back pain specialist near me" on her phone</li>
+            <li>Scrolls fast, scanning for a name, a face, or a button</li>
+            <li>Leaves the tab open and checks a second site before deciding</li>
+          </ul>
+        </div>
+        <div class="empathy-quad">
+          <span class="qlabel">FEELS</span>
+          <ul>
+            <li>Anxious about the pain and impatient with the process</li>
+            <li>Slightly overwhelmed by unfamiliar medical terms</li>
+            <li>Reassured the moment she sees a real doctor's face and a rating</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">// Competitive landscape</span>
+      <h2>How this compares to leading practice sites</h2>
+      <p>A pattern review across well-regarded multi-specialty orthopedic and spine practice websites, benchmarked against the before and after states of this homepage.</p>
+    </div>
+    <table class="compare-table comp-table">
+      <thead>
+        <tr><th>Pattern</th><th>Common among leading practices</th><th>Before</th><th>After</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Booking reachable without scrolling</td><td>Standard</td>
+          <td class="no">No</td><td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Consolidated trust stats above the fold</td><td>Common</td>
+          <td class="no">No</td><td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Navigation by condition, not just department</td><td>Emerging best practice</td>
+          <td class="no">No</td><td class="partial">Partial</td>
+        </tr>
+        <tr>
+          <td>Named specialists with credentials on homepage</td><td>Standard</td>
+          <td class="no">No</td><td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Visible star rating / review count</td><td>Standard</td>
+          <td class="partial">Badge only, no count</td><td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Dedicated telehealth entry point</td><td>Common</td>
+          <td class="no">No</td><td class="yes">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="source-note">Pattern review based on published healthcare web-design guidance and audits of multi-specialty orthopedic practice sites; not a claim of formal usability testing on named competitors.</p>
   </div>
 </section>
 
